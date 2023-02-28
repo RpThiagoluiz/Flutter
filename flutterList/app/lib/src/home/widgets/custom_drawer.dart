@@ -6,6 +6,13 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationDrawer(
+      onDestinationSelected: (index) {
+        if (index == 1) {
+          // Pop para fechar a navegação do drawer
+          Navigator.of(context).pop();
+          Navigator.of(context).pushNamed('/config');
+        }
+      },
       children: [
         Padding(
           padding:

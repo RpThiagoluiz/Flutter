@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_list/src/shared/widgets/custom_drawer.dart';
+import 'package:flutter_list/src/home/widgets/custom_drawer.dart';
 import 'package:flutter_list/src/shared/widgets/user_avatar_button.dart';
 
 class HomePage extends StatefulWidget {
@@ -62,7 +62,12 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton.extended(
         icon: const Icon(Icons.edit),
         label: const Text('New item'),
-        onPressed: () {},
+        onPressed: () {
+          // '/home/newItem' acessar a rota
+          // contudo o modular entende que vc está na home
+          // e dando um ./ ele segue a vida
+          Navigator.of(context).pushNamed('./newItem');
+        },
       ),
     );
   }
